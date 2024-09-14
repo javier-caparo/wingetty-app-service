@@ -166,7 +166,7 @@ resource "azurerm_linux_web_app" "winget" {
 
   site_config {
     application_stack {
-      docker_image_name   = "thilojaeggi/wingetty:0.0.9"
+      docker_image_name   = "thilojaeggi/wingetty:1.0.0"
       docker_registry_url = "https://ghcr.io"
     }
   }
@@ -175,9 +175,9 @@ resource "azurerm_linux_web_app" "winget" {
     WINGETTY_SQLALCHEMY_DATABASE_URI = "postgresql://psqladmin:${random_password.psql_password.result}@${azurerm_postgresql_flexible_server.winget.fqdn}/winget"
     WINGETTY_SECRET_KEY              = random_password.winget_secret.result
     WINGETTY_ENABLE_REGISTRATION     = "1"
-    WINGETTY_REPO_NAME               = "EY Winget"
+    WINGETTY_REPO_NAME               = "JC Winget"
     LOG_LEVEL                        = "INFO"
-    TZ                               = "America/Chicago"
+    TZ                               = "America/Lima"
   }
 
   identity {
