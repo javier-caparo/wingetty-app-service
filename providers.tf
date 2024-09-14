@@ -18,7 +18,11 @@ terraform {
     }
   }
 
-  backend "azurerm" {
+  cloud {
+    organization = "javiercaparo574"
+    workspaces {
+      name = "wingetty-app-service"
+    }
   }
 }
 
